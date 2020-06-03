@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="scene" onMouseDragged="#Scene_Drag" onMousePressed="#Scene_Pressed" onMouseReleased="#Scene_Released" prefHeight="700.0" prefWidth="1001.0" style="-fx-background-color: #f9f9f9; -fx-border-radius: 30 30 30 30; -fx-background-radius: 30 30 30 30;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserController">
+   <children>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="930.0" layoutY="10.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Close.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="870.0" layoutY="10.0" onMouseClicked="#Minimize" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Down.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="32.0" layoutY="30.0" prefHeight="54.0" prefWidth="222.0" text="E-BookStore">
+         <font>
+            <Font name="Lucida Handwriting Italic" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.558252427184466" endY="0.6553398058252426">
+               <stops>
+                  <Stop color="#5b4b4d" />
+                  <Stop color="#ff0026f2" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Pane fx:id="Browse_pane" layoutX="40.0" layoutY="120.0" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: #000000; -fx-background-radius: 20 20 20 20;" />
+      <ImageView fx:id="Browse_image" fitHeight="25.0" fitWidth="25.0" layoutX="53.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Search_White.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Browse_button" layoutX="54.0" layoutY="119.0" mnemonicParsing="false" onMouseClicked="#Browse_Scene" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="         Browse" textAlignment="JUSTIFY" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="Add_pane" layoutX="41.0" layoutY="336.0" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: transparent; -fx-background-radius: 20 20 20 20;" />
+      <ImageView fx:id="Add_image" fitHeight="25.0" fitWidth="25.0" layoutX="54.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Add_Book_black.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Add_button" layoutX="55.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#Add_scene" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="        Add Book" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="AddW_pane" layoutX="41.0" layoutY="408.0" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: transparent; -fx-background-radius: 20 20 20 20;" />
+      <ImageView fx:id="AddW_image" fitHeight="25.0" fitWidth="25.0" layoutX="54.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Add_Writer_Black.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="AddW_button" layoutX="55.0" layoutY="407.0" mnemonicParsing="false" onMouseClicked="#Add_Writer_Scene" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="    Add Publisher" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="Cart_pane" layoutX="40.0" layoutY="192.0" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: transparent; -fx-background-radius: 20 20 20 20;" />
+      <ImageView fx:id="Cart_image" fitHeight="25.0" fitWidth="25.0" layoutX="53.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Cart_Black.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Cart_button" layoutX="53.0" layoutY="191.0" mnemonicParsing="false" onMouseClicked="#Cart_Scene" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="      Cart" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="Profile_pane" layoutX="40.0" layoutY="264.0" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: transparent; -fx-background-radius: 20 20 20 20;" />
+      <ImageView fx:id="Profile_image" fitHeight="25.0" fitWidth="25.0" layoutX="53.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Profile_Black.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Profile_button" layoutX="54.0" layoutY="263.0" mnemonicParsing="false" onMouseClicked="#Profile_scene" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="         Profile" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="Notification_pane" layoutX="40.0" layoutY="480.0" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: transparent; -fx-background-radius: 20 20 20 20;" />
+      <ImageView fx:id="Notification_image" fitHeight="25.0" fitWidth="25.0" layoutX="53.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Notification_Black.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Notification_button" layoutX="54.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#Notification_Scene" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="     Notification" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="Promote_pane" layoutX="40.0" layoutY="552.0" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: transparent; -fx-background-radius: 20 20 20 20;" />
+      <ImageView fx:id="Promote_image" fitHeight="25.0" fitWidth="25.0" layoutX="53.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Promote_B.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Promote_button" layoutX="54.0" layoutY="551.0" mnemonicParsing="false" onMouseClicked="#Promote_Scene" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="           Promote" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="Stat_pane" layoutX="40.0" layoutY="624.0" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: transparent; -fx-background-radius: 20 20 20 20;" />
+      <ImageView fx:id="Stat_image" fitHeight="25.0" fitWidth="25.0" layoutX="53.0" layoutY="638.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Statistics_B.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Stat_button" layoutX="54.0" layoutY="623.0" mnemonicParsing="false" onMouseClicked="#Statistics_Scene" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="           Statistics" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="Add_Book_Scene" layoutX="225.0" layoutY="90.0" prefHeight="590.0" prefWidth="760.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #f0f0f0, #888888); -fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <Label fx:id="Book_lbl" layoutX="243.0" layoutY="16.0" text="Add New Book">
+               <font>
+                  <Font name="Rockwell Bold" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="170.0" text="Title">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="215.0" text="Author">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="260.0" text="Publisher">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="90.0" text="Information About Book" underline="true">
+               <font>
+                  <Font name="AGA Arabesque Desktop" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="AB_title" layoutX="280.0" layoutY="170.0" prefHeight="31.0" prefWidth="265.0" />
+            <TextField fx:id="AB_author" layoutX="280.0" layoutY="215.0" prefHeight="31.0" prefWidth="265.0" />
+            <TextField fx:id="AB_publisher" layoutX="280.0" layoutY="260.0" prefHeight="31.0" prefWidth="265.0" />
+            <Label fx:id="AB_result" layoutX="108.0" layoutY="531.0" prefHeight="41.0" prefWidth="565.0" textAlignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="305.0" text="Publication Year">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="350.0" text="Price">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="395.0" text="Category">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="440.0" text="Quantity">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="485.0" text="Threshold">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="AB_threshold" layoutX="280.0" layoutY="485.0" prefHeight="31.0" prefWidth="265.0" />
+            <TextField fx:id="AB_quantity" layoutX="280.0" layoutY="440.0" prefHeight="31.0" prefWidth="265.0" />
+            <TextField fx:id="AB_price" layoutX="280.0" layoutY="350.0" prefHeight="31.0" prefWidth="265.0" />
+            <Button fx:id="AB_add" layoutX="601.0" layoutY="308.0" mnemonicParsing="false" onMouseClicked="#Add_New_Book" prefHeight="31.0" prefWidth="106.0" text="ADD" />
+            <DatePicker fx:id="AB_date" layoutX="280.0" layoutY="305.0" prefHeight="31.0" prefWidth="265.0" />
+            <ChoiceBox fx:id="AB_category" layoutX="280.0" layoutY="395.0" prefWidth="265.0" />
+            <Label layoutX="35.0" layoutY="125.0" text="ISBN">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="AB_isbn" layoutX="280.0" layoutY="125.0" prefHeight="31.0" prefWidth="265.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Browse_Scene" layoutX="225.0" layoutY="90.0" prefHeight="590.0" prefWidth="760.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #f0f0f0, #888888); -fx-background-radius: 30 30 30 30;">
+         <children>
+            <TextField fx:id="B_search" layoutX="39.0" layoutY="15.0" prefHeight="41.0" prefWidth="407.0" />
+            <ChoiceBox fx:id="B_choice" layoutX="450.0" layoutY="20.0" prefHeight="31.0" prefWidth="116.0" />
+            <TableView fx:id="Books_View" layoutX="20.0" layoutY="70.0" prefHeight="500.0" prefWidth="720.0">
+               <columns>
+                  <TableColumn fx:id="isbn_book" maxWidth="200.0" minWidth="50.0" prefWidth="120.0" text="ISBN" />
+                  <TableColumn fx:id="title_book" minWidth="0.0" prefWidth="290.11328125" text="Title" />
+                  <TableColumn fx:id="publisher_book" prefWidth="212.140625" text="Publisher" />
+                  <TableColumn fx:id="price_book" prefWidth="100.0" text="Price" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Button fx:id="B_Bsearch" layoutX="579.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#Search" prefHeight="31.0" prefWidth="82.0" text="Search" />
+            <Button fx:id="B_all" layoutX="664.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#All_Books" prefHeight="31.0" prefWidth="58.0" text="All" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Add_Publisher_Scene" layoutX="225.0" layoutY="90.0" prefHeight="590.0" prefWidth="760.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #f0f0f0, #888888); -fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <Label fx:id="Publisher_lbl" layoutX="225.0" layoutY="16.0" text="Add New Publisher">
+               <font>
+                  <Font name="Rockwell Bold" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="175.0" text="Name">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="245.0" text="Address">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="315.0" text="Phone">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="116.0" text="Information About Publisher" underline="true">
+               <font>
+                  <Font name="AGA Arabesque Desktop" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="AP_name" layoutX="200.0" layoutY="175.0" prefHeight="31.0" prefWidth="265.0" />
+            <TextField fx:id="AP_address" layoutX="200.0" layoutY="245.0" prefHeight="31.0" prefWidth="265.0" />
+            <TextField fx:id="AP_phone" layoutX="200.0" layoutY="315.0" prefHeight="31.0" prefWidth="265.0" />
+            <Button fx:id="AP_add" layoutX="327.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#Add_New_Publisher" prefHeight="31.0" prefWidth="106.0" text="ADD" />
+            <Label fx:id="AP_result" layoutX="145.0" layoutY="457.0" prefHeight="41.0" prefWidth="520.0" textAlignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Book_Info" layoutX="225.0" layoutY="90.0" prefHeight="590.0" prefWidth="760.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #f0f0f0, #888888); -fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <Label fx:id="BI_isbn" layoutX="63.0" layoutY="78.0" prefHeight="25.0" prefWidth="127.0" text="ISBN: 12345">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="BI_quantity" layoutX="63.0" layoutY="113.0" prefHeight="27.0" prefWidth="206.0" text="Available: 100">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="BI_title" layoutX="63.0" layoutY="153.0" prefHeight="65.0" prefWidth="602.0" text="Journay to the Center of the Earth">
+               <font>
+                  <Font name="System Bold Italic" size="33.0" />
+               </font>
+            </Label>
+            <Label fx:id="BI_price" layoutX="63.0" layoutY="213.0" prefHeight="35.0" prefWidth="242.0" text="Price:  50.00 LE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="BI_threshold" layoutX="283.0" layoutY="113.0" prefHeight="27.0" prefWidth="216.0" text="Threshold:  30">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="63.0" layoutY="258.0" prefHeight="35.0" prefWidth="195.0" text="Description" underline="true">
+               <font>
+                  <Font name="Eras Bold ITC" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="BI_date" layoutX="63.0" layoutY="373.0" prefHeight="35.0" prefWidth="479.0" text="Publication Year: 28 - 6 - 2020">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="BI_publisher" layoutX="63.0" layoutY="333.0" prefHeight="35.0" prefWidth="479.0" text="Publisher: Mazen Ahmed">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="BI_author" layoutX="63.0" layoutY="293.0" prefHeight="35.0" prefWidth="479.0" text="Author: Mazen Ahmed">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="BI_category" layoutX="63.0" layoutY="413.0" prefHeight="35.0" prefWidth="479.0" text="Category : Science">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Button fx:id="BI_add" layoutX="427.0" layoutY="417.0" mnemonicParsing="false" onMouseClicked="#Add_To_Cart" prefHeight="31.0" prefWidth="320.0" text="Add to Cart" />
+            <ImageView layoutX="14.0" layoutY="14.0" onMouseClicked="#Browse_Scene">
+               <image>
+                  <Image url="@../Images/Back.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="BI_cartText" alignment="CENTER" editable="false" layoutX="534.0" layoutY="375.0" prefHeight="31.0" prefWidth="97.0" text="1" />
+            <Button fx:id="BI_cartP" layoutX="626.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#Plus" text="+" />
+            <Button fx:id="BI_cartM" layoutX="512.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#Minus" prefHeight="31.0" prefWidth="31.0" text="-" />
+            <ImageView fitHeight="52.0" fitWidth="58.0" layoutX="545.0" layoutY="311.0">
+               <image>
+                  <Image url="@../../../../AppData/Local/Temp/icons8_Shopping_Cart_52px.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="BI_update" layoutX="220.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#Update_Book" prefHeight="31.0" prefWidth="320.0" text="Update Book" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Cart_Scene" layoutX="225.0" layoutY="90.0" prefHeight="590.0" prefWidth="760.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #f0f0f0, #888888); -fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="15.0" layoutY="15.0" prefHeight="560.0" prefWidth="730.0">
+              <content>
+                <AnchorPane fx:id="Add_Cart" minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="730.0" />
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="MQ_Scene" prefHeight="700.0" prefWidth="1001.0" style="-fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <Pane opacity="0.59" prefHeight="700.0" prefWidth="1001.0" style="-fx-background-color: #000000; -fx-background-radius: 30 30 30 30;" />
+            <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="TOP" layoutX="300.0" layoutY="225.0" prefHeight="250.0" prefWidth="400.0" text="Modify Book Quantity">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="MQ_text" alignment="CENTER" layoutX="30.0" layoutY="30.0" prefHeight="50.0" prefWidth="340.0" promptText="Quantity Needed">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="MQ_add" layoutX="145.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#Update_Quantity" text="Add Quantity" />
+                        <Button fx:id="MQ_cancel" layoutX="145.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#Cancel_Update_Quantity" prefHeight="31.0" prefWidth="111.0" text="Cancel" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+      </Pane>
+      <Pane fx:id="CO_Scene" prefHeight="700.0" prefWidth="1001.0" style="-fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <Pane opacity="0.59" prefHeight="700.0" prefWidth="1001.0" style="-fx-background-color: #000000; -fx-background-radius: 30 30 30 30;" />
+            <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="TOP" layoutX="300.0" layoutY="225.0" prefHeight="250.0" prefWidth="400.0" text="Confirm Check Out">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="CO_Cnum" alignment="CENTER" layoutX="30.0" layoutY="30.0" prefHeight="41.0" prefWidth="340.0" promptText="Card Number &quot;10 numbers&quot;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="CO_add" layoutX="40.0" layoutY="165.0" mnemonicParsing="false" onMouseClicked="#Check_Out" prefHeight="30.0" prefWidth="150.0" text="Check Out" />
+                        <Button fx:id="CO_cancel" layoutX="210.0" layoutY="165.0" mnemonicParsing="false" onMouseClicked="#Cancel_Check_Out" prefHeight="30.0" prefWidth="150.0" text="Cancel" />
+                        <TextField fx:id="CO_Cdate" alignment="CENTER" layoutX="30.0" layoutY="94.0" prefHeight="41.0" prefWidth="340.0" promptText="Card Expire Date &quot;MM/YY&quot;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="User_Info" layoutX="225.0" layoutY="90.0" prefHeight="590.0" prefWidth="760.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #f0f0f0, #888888); -fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <Label fx:id="UI_user" alignment="CENTER" layoutY="60.0" prefHeight="65.0" prefWidth="760.0" text="mazen201">
+               <font>
+                  <Font name="System Bold Italic" size="35.0" />
+               </font>
+            </Label>
+            <Label fx:id="UI_first" alignment="CENTER" layoutY="130.0" prefHeight="35.0" prefWidth="760.0" text="First Name: Mazen">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="UI_last" alignment="CENTER" layoutY="180.0" prefHeight="35.0" prefWidth="760.0" text="Last Name: Mazen">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="UI_email" alignment="CENTER" layoutY="230.0" prefHeight="35.0" prefWidth="760.0" text="E-Mail: Mazen">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="UI_password" alignment="CENTER" layoutY="280.0" prefHeight="35.0" prefWidth="760.0" text="Phone: Mazen">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="UI_phone" alignment="CENTER" layoutY="330.0" prefHeight="35.0" prefWidth="760.0" text="Password: Mazen">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="UI_address" alignment="CENTER" layoutY="380.0" prefHeight="35.0" prefWidth="760.0" text="Address: Mazen">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="UI_update" layoutX="220.0" layoutY="456.0" mnemonicParsing="false" onMouseClicked="#Update_Info" prefHeight="31.0" prefWidth="320.0" text="Update Personal Information" />
+            <Button fx:id="UI_logout" layoutX="220.0" layoutY="516.0" mnemonicParsing="false" onMouseClicked="#LogOut" prefHeight="31.0" prefWidth="320.0" text="LogOut" />
+         </children>
+      </AnchorPane>
+      <Pane fx:id="UI_Scene" prefHeight="700.0" prefWidth="1001.0" style="-fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <Pane opacity="0.59" prefHeight="700.0" prefWidth="1001.0" style="-fx-background-color: #000000; -fx-background-radius: 30 30 30 30;" />
+            <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="TOP" layoutX="300.0" layoutY="225.0" prefHeight="250.0" prefWidth="400.0" text="Update Personal Information">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="UI_value" alignment="CENTER" layoutX="30.0" layoutY="30.0" prefHeight="41.0" prefWidth="340.0" promptText="New Value">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="UI_add" layoutX="40.0" layoutY="165.0" mnemonicParsing="false" onMouseClicked="#Update_Personal" prefHeight="30.0" prefWidth="150.0" text="Update" />
+                        <Button fx:id="UI_cancel" layoutX="210.0" layoutY="165.0" mnemonicParsing="false" onMouseClicked="#Cancel_Update" prefHeight="30.0" prefWidth="150.0" text="Cancel" />
+                        <ChoiceBox fx:id="UI_choice" layoutX="124.0" layoutY="105.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="Notification_Scene" layoutX="225.0" layoutY="90.0" prefHeight="590.0" prefWidth="760.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #f0f0f0, #888888); -fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="15.0" layoutY="15.0" prefHeight="560.0" prefWidth="730.0">
+               <content>
+                  <AnchorPane fx:id="Notif" minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="730.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Promote_Scene" layoutX="225.0" layoutY="90.0" prefHeight="590.0" prefWidth="760.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #f0f0f0, #888888); -fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="15.0" layoutY="15.0" prefHeight="560.0" prefWidth="730.0">
+               <content>
+                  <AnchorPane fx:id="promote" minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="730.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Stat_Scene" layoutX="225.0" layoutY="90.0" prefHeight="590.0" prefWidth="760.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #f0f0f0, #888888); -fx-background-radius: 30 30 30 30;" visible="false">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="15.0" layoutY="15.0" prefHeight="560.0" prefWidth="730.0">
+               <content>
+                  <AnchorPane fx:id="Statistics" minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="730.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

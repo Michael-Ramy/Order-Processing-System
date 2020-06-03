@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="Jars/mysql-connector-java-5.1.49.jar"/>
+	<classpathentry kind="lib" path="Jars/com.lowagie.text-2.1.7.jar"/>
+	<classpathentry kind="lib" path="Jars/commons-collections-3.2.1-1.0.0.jar"/>
+	<classpathentry kind="lib" path="Jars/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="Jars/commons-logging-1.1.1-api.jar"/>
+	<classpathentry kind="lib" path="Jars/itextpdf-5.5.1.jar"/>
+	<classpathentry kind="lib" path="Jars/jasperreports-5.0.1.jar"/>
+	<classpathentry kind="lib" path="Jars/org.apache.commons.beanutils.jar"/>
+	<classpathentry kind="lib" path="Jars/jasper-compiler-jdt.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
